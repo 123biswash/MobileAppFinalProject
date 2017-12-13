@@ -1,0 +1,92 @@
+
+<html>
+<head>
+	<!-- <link href="assets/ratchet/css/ratchet.css" rel="stylesheet">
+	<link href="assets/css/styles.css" rel="stylesheet"> -->
+	<script src="cordova.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<body>
+<script id="home-tpl" type="text/template">
+	<header class="home-view">
+	<h1 class="title">Home View</h1>
+	</header>
+	<div class="bar bar-standard bar-header-secondary">
+	<button class = "Download"> <a href="#downloadRoute/:download-view">Download</a></button>
+	<button class = "Search"><a href = "#searchRoute/:search-view">Search</a></button>
+	</div>
+	<!-- <div class="content"></div> -->
+</script>
+
+<script id="download-tpl" type="text/template">
+	<header class="download-header">
+    <a href = "#"><button class = 'back-button'>Back to Home</button></a>
+	  <h1 class="title">Download View</h1>
+	</header>
+	<div class="bar bar-standard bar-header-secondary">
+	  <input class='search-key1' type="search" name= "URL"/>
+	  <input class='search-key2' type="search" name= "Tag"/>
+    	<button class = "DownloadImg"> Download</a></button>
+	</div>
+	<!-- <div class="content"></div> -->
+</script>
+
+<script id="search-tpl" type="text/template">
+	<header class="search-header">
+	<a href = "#"><button class = 'back-button'>Back to Home</button></a>
+	<h1 class="title">Search View</h1>
+	</header>
+	<div class="bar bar-standard bar-header-secondary">
+	  
+	  <input class='search-key3' type="search" name= "Search a tag"/>
+	  
+	</div>
+	<div class="content"></div>
+</script>
+
+
+<script id="image-list-tpl" type="text/template">
+	
+	<ul class="table-view">
+	{{#each this}}
+	<li class="table-view-cell media">
+		<a href="#images/{{ file_name }}">
+	<!-- <img class="media-object pull-left" src="assets/pics/{{pic}}"> -->
+		<div class="media-body">
+		
+		<p>{{file_name}}</p>
+		</div>
+	</a>
+	</li>
+	{{/each}}
+	</ul>
+</script>
+
+<script id="image-tpl" type="text/template">
+<header class= "search-header">
+                <a href = "#"><button class = 'back-button'>Back to Home</button></a>
+                <h1 class="title">Search View</h1>
+            </header>
+
+            <div class="media-body">
+                <p>{{file_name}} </p>
+                <img src = {{url}}> 
+
+            </div>
+ </script>
+<script src="js/HomeView.js"></script>
+<script src="js/DownloadView.js"></script>
+<script src="js/SearchView.js"></script>
+<script src="js/ImageListView.js"></script>
+
+<script src="lib/handlebars.js"></script>
+<script src="lib/jquery.js"></script>
+<script src="lib/router.js"></script>
+<script src="js/ImageService.js"></script>
+<script src="js/ImageView.js"></script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
